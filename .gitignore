@@ -1,0 +1,25 @@
+# Archivos de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Variables de entorno y credenciales
+.env
+.env.local
+.env.development
+.env.production
+
+# Configuración de IDEs
+.vscode/
+.idea/
+*.iml
+
+# Logs y archivos temporales
+logs/
+*.log
+*.tmp
+
+# Dependencias (por si usas virtualenv)
+venv/
+.env/
