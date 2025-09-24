@@ -1,5 +1,6 @@
 from contexts.chatbot_management.infrastructure.adapters.openai_adapter import OpenAIAdapter
 from contexts.chatbot_management.infrastructure.processors.text_preprocessing import TextPreprocessing
+from contexts.chatbot_management.infrastructure.repositories.chatbot_repository import ChatbotRepository
 
 class ChatbotLogicService:
     """
@@ -20,9 +21,6 @@ class ChatbotLogicService:
         if not cleaned_message or len(cleaned_message) < 2:
             return "No entiendo tu mensaje. ¿Podrías reformularlo?"
 
-        # 3️⃣ Lógica de respuestas automáticas sin OpenAI
-        if "ayuda" in cleaned_message:
-            return "Soy un asistente emocional. Puedes contarme cómo te sientes o preguntar sobre bienestar emocional."
-
-        # 4️⃣ Enviar mensaje procesado a OpenAI
-        return OpenAIAdapter.get_openai_response(cleaned_message)
+        # 3️⃣ Enviar mensaje procesado a OpenAI
+        #return OpenAIAdapter.get_openai_response(cleaned_message)
+        return OpenAIAdapter.get_ollama_response(cleaned_message,ChatbotRepository.get_conversation_history())

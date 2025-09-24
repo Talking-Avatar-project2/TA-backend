@@ -5,7 +5,6 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
 import signal
 import cv2
-import threading
 from fer import FER
 from shared.utils.emotion_image_paths import IMAGE_PATHS
 from contexts.avatar_management.domain.services.avatar_animation_service import AvatarAnimationService
