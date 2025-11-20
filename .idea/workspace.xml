@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6e0c413e-6b65-4113-b284-4426b0fd4e32" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audios/test_avatar_talk.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contexts/avatar_management/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contexts/avatar_management/application/controllers/avatar_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contexts/avatar_management/application/dtos/avatar_request.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contexts/avatar_management/application/dtos/avatar_response.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contexts/avatar_management/application/use_cases/animate_avatar_use_case.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contexts/avatar_management/application/use_cases/generate_viseme_sequence_use_case.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contexts/avatar_management/application/use_cases/speak_text_use_case.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contexts/avatar_management/domain/entities/avatar.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contexts/avatar_management/domain/repositories/avatar_repository_interface.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contexts/avatar_management/domain/services/atlas_renderer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contexts/avatar_management/domain/services/avatar_animation_service.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contexts/avatar_management/domain/services/landmark_smoothing_service.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contexts/avatar_management/domain/services/viseme_mapping_service.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contexts/avatar_management/infrastructure/adapters/avatar_adapter.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contexts/avatar_management/infrastructure/adapters/tts_adapter.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contexts/avatar_management/infrastructure/display/avatar_display_service.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contexts/avatar_management/infrastructure/interpolators/expression_interpolator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contexts/avatar_management/infrastructure/processors/avatar_image_processor.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contexts/avatar_management/infrastructure/processors/mesh_warp.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contexts/avatar_management/infrastructure/renderers/viseme_renderer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contexts/avatar_management/infrastructure/repositories/avatar_repository.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contexts/recognition_management/infrastructure/processors/realtime_emotion_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/contexts/recognition_management/infrastructure/processors/realtime_emotion_detector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/A_000002.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/A_000003.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/A_000005.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/A_000006.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/A_000008.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/A_002043.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/A_002045.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/A_002048.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/A_002050.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/A_002053.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/E_000009.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/E_000010.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/E_000011.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/E_000012.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/E_002061.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/E_002063.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/E_002064.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/E_002066.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/E_002067.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/FV_000236.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/FV_000244.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/FV_000253.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/FV_000261.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/FV_000270.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/FV_000277.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/FV_000288.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/FV_000299.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/FV_000310.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/FV_000321.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/FV_000322.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/FV_000325.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/FV_000328.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/FV_000331.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/FV_000335.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/FV_000351.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/FV_000358.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/FV_000365.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/FV_000372.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/FV_000379.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/FV_000393.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/FV_000399.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/FV_000405.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/FV_000410.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/FV_000416.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/FV_000426.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/FV_000432.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/FV_000438.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/FV_000443.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/FV_000449.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/FV_000455.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/FV_000465.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/FV_000475.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/FV_000485.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/FV_000495.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/I_000014.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/I_000015.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/I_000017.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/I_000018.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/I_000020.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/I_002069.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/I_002070.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/I_002072.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/I_002073.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/I_002075.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/L_000499.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/L_000506.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/L_000513.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/L_000520.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/L_000527.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/L_000536.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/L_000540.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/L_000545.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/L_000550.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/L_000555.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/L_000571.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/L_000573.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/L_000575.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/L_000577.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/L_000579.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/L_000581.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/L_000582.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/L_000584.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/L_000586.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/L_000587.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/L_000615.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/L_000619.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/L_000622.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/L_000626.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/L_000630.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000035.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000040.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000045.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000049.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000054.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000065.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000072.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000080.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000087.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000095.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000103.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000110.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000117.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000124.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000131.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000137.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000138.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000140.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000141.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000143.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000144.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000151.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000157.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000164.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000170.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000179.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000181.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000183.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000185.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000188.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000189.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000194.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000197.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000199.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000226.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000227.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000229.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000230.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_000232.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001398.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001407.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001416.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001425.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001434.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001437.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001443.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001449.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001454.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001460.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001466.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001474.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001483.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001491.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001502.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001505.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001509.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001516.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001533.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001537.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001541.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001545.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001549.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001752.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001759.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001766.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001773.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001780.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001789.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001798.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001808.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001817.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001826.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001831.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001836.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001841.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001846.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001851.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001855.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001857.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001860.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001863.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001865.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001867.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001873.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001878.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001884.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/MBP_001890.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/O_000021.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/O_000023.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/O_000024.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/O_000026.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/O_000027.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/O_002054.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/O_002056.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/O_002057.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/O_002058.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/O_002060.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/REST_001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/R_001206.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/R_001212.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/R_001218.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/R_001224.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/R_001230.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/R_001247.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/R_001253.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/R_001259.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/R_001265.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/R_001271.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/R_001287.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/R_001291.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/R_001295.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/R_001299.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/R_001303.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/R_001322.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/R_001326.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/R_001331.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/R_001336.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/R_001340.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/R_001356.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/R_001363.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/R_001370.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/R_001377.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/R_001384.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_000864.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_000870.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_000875.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_000880.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_000885.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_000892.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_000900.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_000909.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_000917.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_000919.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_000925.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_000927.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_000935.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_000944.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_000952.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_000975.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_000982.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_000990.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_000997.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001004.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001019.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001027.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001035.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001043.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001052.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001061.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001065.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001068.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001072.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001076.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001077.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001082.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001087.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001092.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001097.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001116.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001121.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001127.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001133.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001139.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001150.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001155.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001161.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001166.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001171.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001180.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001183.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001186.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001189.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001565.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001569.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001574.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001578.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001583.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001592.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001599.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001606.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001613.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001620.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001631.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001637.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001643.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001650.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001656.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001668.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001674.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001681.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001688.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001694.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001706.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001715.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001723.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001732.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/SH_001741.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_000631.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_000633.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_000634.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_000635.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_000636.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_000640.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_000646.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_000652.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_000658.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_000664.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_000685.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_000689.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_000693.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_000696.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_000700.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_000719.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_000723.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_000728.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_000733.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_000737.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_000755.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_000762.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_000768.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_000775.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_000782.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_000790.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_000793.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_000797.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_000800.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_000803.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_000830.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_000831.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_000832.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_000833.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_000835.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_001902.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_001907.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_001913.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_001918.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_001924.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_001933.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_001939.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_001945.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_001951.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_001956.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_001967.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_001969.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_001972.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_001975.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_001978.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_001979.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_001985.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_001990.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_001995.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_002000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_002018.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_002024.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_002030.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_002036.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/TH_002042.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/U_000029.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/U_000030.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/U_000031.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/U_000033.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/U_000034.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/U_002076.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/U_002080.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/U_002084.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/U_002088.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/U_002091.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/visemes_atlas_final/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_avatar_talk.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/utils/viseme_input_simulator.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="34wIk55iuOoqlsqT7LnmWGupZku" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/core-v6&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/alvar/Documents/GitHub/TA-backend&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\alvar\Documents\GitHub\TA-backend\images" />
+      <recent name="C:\Users\alvar\Documents\GitHub\TA-backend\contexts\avatar_management\infrastructure" />
+      <recent name="C:\Users\alvar\Documents\GitHub\TA-backend\tests\utils" />
+      <recent name="C:\Users\alvar\Documents\GitHub\TA-backend" />
+      <recent name="C:\Users\alvar\Documents\GitHub\TA-backend\contexts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\alvar\Documents\GitHub\TA-backend" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-1f77c24022e5-d902c0275401-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-252.26830.99" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6e0c413e-6b65-4113-b284-4426b0fd4e32" name="Changes" comment="" />
+      <created>1762118346825</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1762118346825</updated>
+    </task>
+    <servers />
+  </component>
+</project>
