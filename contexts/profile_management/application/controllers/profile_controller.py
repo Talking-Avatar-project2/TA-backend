@@ -1,11 +1,18 @@
 # contexts/profile_management/application/controllers/profile_controller.py
 from flask import Blueprint, request, jsonify, current_app
 from contexts.profile_management.domain.services.firebase_storage_service import FirebaseStorageService
+from contexts.user_management.application.middlewares.auth_middleware import optional_auth
+from contexts.user_management.domain.services.user_service import UserService
 
 profile_bp = Blueprint("profile_bp", __name__)
 
+def get_user_service():
+    """Inicializa el UserService de forma lazy (solo cuando se necesita)"""
+    return UserService()
+
 
 @profile_bp.post("/upload-photo")
+@optional_auth
 def upload_profile_photo():
     """
     Sube foto de perfil a Firebase Storage
@@ -64,7 +71,17 @@ def upload_profile_photo():
             content_type=file.content_type or 'image/jpeg'
         )
 
-        current_app.logger.info(f"✅ Foto de perfil subida: {user_id} → {photo_url}")
+        current_app.logger.info(f"[OK] Foto de perfil subida: {user_id} -> {photo_url}")
+
+        # 7. Actualizar URL en perfil de Firestore (si el usuario está autenticado)
+        if hasattr(request, 'user_id') and request.user_id == user_id:
+            try:
+                user_service = get_user_service()
+                user_service.update_photo_url(user_id, photo_url)
+                current_app.logger.info(f"[OK] Perfil actualizado con nueva foto: {user_id}")
+            except Exception as e:
+                # No fallar si hay error al actualizar Firestore, ya que la foto ya se subió
+                current_app.logger.warning(f"[WARN] No se pudo actualizar perfil: {e}")
 
         return jsonify({
             'success': True,

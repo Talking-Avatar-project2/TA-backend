@@ -9,6 +9,7 @@ from config import Config
 from contexts.chatbot_management.application.controllers.chatbot_controller import chatbot_bp
 from contexts.avatar_management.application.controllers.avatar_controller import avatar_bp
 from contexts.profile_management.application.controllers.profile_controller import profile_bp
+from contexts.user_management.application.controllers.user_controller import user_bp
 from shared.utils.error_handler import handle_errors
 from firebase_config import initialize_firebase
 env_path = Path(__file__).parent / ".env"
@@ -43,6 +44,7 @@ def create_app():
     app.register_blueprint(chatbot_bp, url_prefix="/chatbot")
     app.register_blueprint(avatar_bp, url_prefix="/avatar")
     app.register_blueprint(profile_bp, url_prefix="/profile")
+    app.register_blueprint(user_bp, url_prefix="/auth")
 
     # Middleware para manejo de errores global
     app.register_error_handler(Exception, handle_errors)

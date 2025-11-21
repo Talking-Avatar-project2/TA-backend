@@ -11,7 +11,7 @@ class GenerateChatbotResponseUseCase:
         :param request_dto: Objeto DTO con el mensaje del usuario.
         :return: Respuesta generada por la IA en formato DTO.
         """
-        response = ChatbotLogicService.process_user_message(request_dto.user_message)
+        response = ChatbotLogicService.process_user_message(request_dto.user_message, request_dto.user_id)
         # Guardar conversación en el historial
-        ChatbotRepository.save_message(request_dto.user_message, response)
+        ChatbotRepository.save_message(request_dto.user_message, response, request_dto.user_id)
         return ChatbotResponseDTO(response)

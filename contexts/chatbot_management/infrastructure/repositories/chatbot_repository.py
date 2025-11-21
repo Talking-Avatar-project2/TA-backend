@@ -1,3 +1,4 @@
+from typing import Any, Dict, List
 from contexts.chatbot_management.domain.repositories.chatbot_repository_interface import ChatbotRepositoryInterface
 from contexts.chatbot_management.domain.entities.chatbot_message import ChatbotMessage
 from shared.infrastructure.firestore_client import FirestoreClient
@@ -33,7 +34,7 @@ class ChatbotRepository(ChatbotRepositoryInterface):
         # Si no se encuentra patrón, asumir Neutra
         return "Neutra", bot_response
     @staticmethod
-    def save_message(user_message: str, bot_response: str, user_id: str = "default_user"):
+    def save_message(user_message: str, bot_response: str, user_id: str):
         """
         Guarda el mensaje en Firestore y en el cache local.
         :param user_message: Mensaje del usuario.
@@ -62,7 +63,7 @@ class ChatbotRepository(ChatbotRepositoryInterface):
             # Actualizar cache local
             ChatbotRepository._conversation_history.append(message)
             
-            print(f"✅ Mensaje guardado en Firestore: {emotion_type}")
+            print(f"[OK] Mensaje guardado en Firestore: {emotion_type}")
 
         except Exception as e:
             print(f"❌ Error guardando mensaje en Firestore: {e}")
@@ -72,11 +73,12 @@ class ChatbotRepository(ChatbotRepositoryInterface):
             ChatbotRepository._conversation_history.append(message)
 
     @staticmethod
-    def get_conversation_history(user_id: str = "default_user",limit: int = 10):
+    def get_conversation_history(user_id: str, limit: int = 50, message_type: str = 'all')-> List[Dict[str, Any]]:
         """
         Obtiene los últimos mensajes de la conversación desde Firestore.
         :param user_id: ID del usuario.
         :param limit: Número máximo de mensajes a obtener.
+        :param message_type: Tipo de mensaje a filtrar ("text", "voice", "all").
         :return: Lista de ChatbotMessage.
         """
         try:
@@ -91,21 +93,24 @@ class ChatbotRepository(ChatbotRepositoryInterface):
             
             messages = []
             for doc in docs:
-                message = ChatbotMessage(
-                    user_message=doc['user_message'],
-                    bot_response=doc['bot_response'],
-                    emotion_type=doc['emotion_type'],
-                    timestamp=doc['timestamp'],
-                    message_id=doc['_id']
-                )
-                messages.append(message)
-            
+                # Filtrar por tipo de mensaje si se especificó
+                doc_message_type = doc.get('message_type', 'text')  # Default es 'text' para mensajes antiguos
+                if message_type != 'all' and doc_message_type != message_type:
+                    continue
+
+                message_dict = {
+                    'user_message': doc['user_message'],
+                    'bot_response': doc['bot_response'],
+                    'emotion_type': doc['emotion_type'],
+                    'timestamp': doc['timestamp'],
+                    'message_id': doc['_id'],
+                    'message_type': doc_message_type
+                }
+                messages.append(message_dict)
+
             # Invertir para tener orden cronológico
             messages.reverse()
-            
-            # Actualizar cache local
-            ChatbotRepository._conversation_history = messages
-            
+
             return messages
             
         except Exception as e:
