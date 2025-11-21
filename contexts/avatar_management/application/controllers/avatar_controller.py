@@ -1,6 +1,8 @@
 # contexts/avatar_management/application/controllers/avatar_controller.py
 from flask import Blueprint, request, jsonify, current_app
 from contexts.avatar_management.domain.services.liveavatar_service import LiveAvatarService, LiveAvatarClientError
+from contexts.recognition_management.domain.services.fer_session_manager import FerSessionManager
+from contexts.recognition_management.application.use_cases.emotion_session_save_use_case import EmotionSessionSaveUseCase
 
 avatar_bp = Blueprint("avatar_bp", __name__)
 
@@ -56,6 +58,8 @@ def start_session():
     user_id = data.get("user_id", "anonymous")
     try:
         info = LiveAvatarService.start_session_for_user(user_id)
+        # Iniciar FER
+        FerSessionManager.start()
         return jsonify({"success": True, "session": info}), 200
     except Exception as e:
         current_app.logger.exception("start_session failed")
@@ -68,10 +72,30 @@ def stop_session():
     user_id = data.get("user_id", "anonymous")
     try:
         resp = LiveAvatarService.stop_session_for_user(user_id)
-        return jsonify({"success": True, "result": resp}), 200
+
+        FerSessionManager.stop()
+        stats = FerSessionManager.get_stats()
+
+        dominant = max(stats, key=stats.get)
+
+        from contexts.recognition_management.application.use_cases.emotion_session_save_use_case import EmotionSessionSaveUseCase
+        EmotionSessionSaveUseCase.execute(
+            user_id="default_user",
+            stats=stats,
+            dominant_emotion=dominant
+        )
+
+        return jsonify({
+            "success": True,
+            "result": resp,
+            "emotion_stats": stats,
+            "dominant_emotion": dominant
+        }), 200
+
     except Exception as e:
         current_app.logger.exception("stop_session failed")
         return jsonify({"success": False, "error": str(e)}), 500
+
 
 
 @avatar_bp.post("/session/keep-alive")
