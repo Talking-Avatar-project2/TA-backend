@@ -1,10 +1,8 @@
-from dotenv import load_dotenv
 import os
-from pathlib import Path
+from dotenv import load_dotenv
 
-# FORZAR explícitamente la ruta del archivo .env
-env_path = Path(__file__).parent / ".env"
-load_dotenv(dotenv_path=env_path)
+# Cargar variables de entorno desde el archivo .env
+load_dotenv()
 
 class Config:
     """Clase de configuración global para el backend."""
