@@ -15,13 +15,13 @@ class ChatbotLogicService:
         :param user_id: ID del usuario para cargar su historial.
         :return: Respuesta procesada por la IA.
         """
-        # 1️⃣ Preprocesamiento del texto
+        # 1. Preprocesamiento del texto
         cleaned_message = TextPreprocessing.clean_text(user_message)
 
-        # 2️⃣ Verificación de mensajes vacíos o irrelevantes
+        # 2. Verificación de mensajes vacíos o irrelevantes
         if not cleaned_message or len(cleaned_message) < 2:
             return "No entiendo tu mensaje. ¿Podrías reformularlo?"
 
-        # 3️⃣ Enviar mensaje procesado a OpenAI con el historial del usuario
+        # 3. Enviar mensaje procesado a OpenAI
         #return OpenAIAdapter.get_openai_response(cleaned_message)
         return OpenAIAdapter.get_ollama_response(cleaned_message, ChatbotRepository.get_conversation_history(user_id))

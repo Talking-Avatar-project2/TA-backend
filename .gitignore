@@ -1,0 +1,7 @@
+.env
+.env
+firebase-credentials.json
+models/emotion_classifier.pt
+models/face_detector.onnx
+models/README.md
+.claude/settings.local.json

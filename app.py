@@ -10,6 +10,8 @@ from contexts.chatbot_management.application.controllers.chatbot_controller impo
 from contexts.avatar_management.application.controllers.avatar_controller import avatar_bp
 from contexts.profile_management.application.controllers.profile_controller import profile_bp
 from contexts.user_management.application.controllers.user_controller import user_bp
+from contexts.recognition_management.application.controllers.facial_recognition_controller import facial_recognition_bp
+from contexts.recognition_management.domain.services.fer_session_manager import FerSessionManager
 from shared.utils.error_handler import handle_errors
 from firebase_config import initialize_firebase
 env_path = Path(__file__).parent / ".env"
@@ -40,7 +42,7 @@ def create_app():
         # resources={r"/*": {"origins": ["http://localhost:51392", "http://192.168.1.36:51392"]}}
     )
 
-    # app.register_blueprint(facial_recognition_bp, url_prefix="/recognition")  # Temporalmente deshabilitado
+    app.register_blueprint(facial_recognition_bp, url_prefix="/recognition")
     app.register_blueprint(chatbot_bp, url_prefix="/chatbot")
     app.register_blueprint(avatar_bp, url_prefix="/avatar")
     app.register_blueprint(profile_bp, url_prefix="/profile")
@@ -59,6 +61,12 @@ def create_app():
             "LIVEAVATAR_API_KEY": bool(Config.LIVEAVATAR_API_KEY),
             "LIVEAVATAR_API_URL": Config.LIVEAVATAR_API_URL,
         }
+
+    # NEW: endpoint para verificar estado del FER
+    @app.get("/recognition/status")
+    def fer_status():
+        return {"fer_running": FerSessionManager._running,
+                "stats": FerSessionManager.get_stats()}, 200
 
     return app
 
