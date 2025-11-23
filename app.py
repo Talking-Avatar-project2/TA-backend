@@ -82,4 +82,5 @@ if __name__ == "__main__":
     print("=======================================")
     print("")
 
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    #app.run(host="0.0.0.0", port=5000, debug=True)
+    app = create_app()
