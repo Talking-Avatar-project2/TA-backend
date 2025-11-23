@@ -96,25 +96,41 @@ class FirestoreClient:
                 firestore_data[key] = {'stringValue': value}
             elif isinstance(value, int):
                 firestore_data[key] = {'integerValue': str(value)}
+            elif isinstance(value, float):
+                firestore_data[key] = {'doubleValue': value}
             elif isinstance(value, datetime):
                 firestore_data[key] = {'timestampValue': value.isoformat() + 'Z'}
             elif isinstance(value, bool):
                 firestore_data[key] = {'booleanValue': value}
-        
+            elif isinstance(value, dict):
+                firestore_data[key] = {
+                    'mapValue': {
+                        'fields': self._convert_to_firestore_format(value)
+                    }
+                }
+
         return firestore_data
     
     def _convert_from_firestore_format(self, doc):
         """Convierte documento de Firestore a formato Python."""
-        data = {'_id': doc['name'].split('/')[-1]}
+        doc_name = doc.get('name', '') if isinstance(doc, dict) else ''
+        data = {'_id': doc_name.split('/')[-1]} if doc_name else {}
         
         for key, value in doc.get('fields', {}).items():
             if 'stringValue' in value:
                 data[key] = value['stringValue']
             elif 'integerValue' in value:
                 data[key] = int(value['integerValue'])
+            elif 'doubleValue' in value:
+                data[key] = float(value['doubleValue'])
             elif 'timestampValue' in value:
                 data[key] = datetime.fromisoformat(value['timestampValue'].replace('Z', '+00:00'))
             elif 'booleanValue' in value:
                 data[key] = value['booleanValue']
-        
+            elif 'mapValue' in value:
+                data[key] = self._convert_from_firestore_format({
+                    'name': '',
+                    'fields': value.get('mapValue', {}).get('fields', {})
+                })
+
         return data

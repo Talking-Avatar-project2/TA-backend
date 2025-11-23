@@ -3,6 +3,7 @@ from flask import Blueprint, request, jsonify, current_app
 from contexts.avatar_management.domain.services.liveavatar_service import LiveAvatarService, LiveAvatarClientError
 from contexts.recognition_management.domain.services.fer_session_manager import FerSessionManager
 from contexts.recognition_management.application.use_cases.emotion_session_save_use_case import EmotionSessionSaveUseCase
+from contexts.user_management.application.middlewares.auth_middleware import optional_auth
 
 avatar_bp = Blueprint("avatar_bp", __name__)
 
@@ -53,9 +54,10 @@ def create_session_token():
 
 
 @avatar_bp.post("/session/start")
+@optional_auth
 def start_session():
     data = request.get_json(silent=True) or {}
-    user_id = data.get("user_id", "anonymous")
+    user_id = getattr(request, "user_id", None) or data.get("user_id") or "anonymous"
     try:
         info = LiveAvatarService.start_session_for_user(user_id)
         # Iniciar FER
@@ -67,9 +69,10 @@ def start_session():
 
 
 @avatar_bp.post("/session/stop")
+@optional_auth
 def stop_session():
     data = request.get_json(silent=True) or {}
-    user_id = data.get("user_id", "anonymous")
+    user_id = getattr(request, "user_id", None) or data.get("user_id") or "anonymous"
     try:
         resp = LiveAvatarService.stop_session_for_user(user_id)
 
@@ -80,7 +83,7 @@ def stop_session():
 
         from contexts.recognition_management.application.use_cases.emotion_session_save_use_case import EmotionSessionSaveUseCase
         EmotionSessionSaveUseCase.execute(
-            user_id="default_user",
+            user_id=user_id,
             stats=stats,
             dominant_emotion=dominant
         )
