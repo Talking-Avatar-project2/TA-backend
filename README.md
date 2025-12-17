@@ -1,6 +1,4 @@
-# TA-backend
-
-# TA-backend (Tesis) — Backend en Flask
+# TA-backend — Backend en Flask
 
 Backend en Python/Flask para la aplicación de soporte emocional con avatar conversacional. Este repositorio expone una API REST organizada por contextos, integra sesión de avatar (LiveAvatar), reconocimiento de expresiones faciales (FER + MediaPipe) y módulos de usuario/perfil basados en Firebase.
 
