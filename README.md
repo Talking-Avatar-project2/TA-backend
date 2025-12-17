@@ -1,6 +1,6 @@
-# TA-backend — Backend en Flask
+# TA-backend (Tesis) — Backend en Flask
 
-Backend en Python/Flask para la aplicación de soporte emocional con avatar conversacional. Este repositorio expone una API REST organizada por contextos, integra sesión de avatar (LiveAvatar), reconocimiento de expresiones faciales (FER + MediaPipe) y módulos de usuario/perfil basados en Firebase.
+Backend en Python/Flask para la aplicación de soporte emocional con avatar conversacional. Este repositorio expone una API REST organizada por contextos, integra sesión de avatar (LiveAvatar), reconocimiento de expresiones faciales en tiempo real (FER + MediaPipe) y módulos de usuario/perfil basados en Firebase.
 
 > El frontend Flutter se encuentra en un repositorio separado: **TA-ui**.
 
@@ -23,52 +23,76 @@ Backend en Python/Flask para la aplicación de soporte emocional con avatar conv
 ---
 
 ## Tecnologías principales
-- Python 3.11, Flask (Blueprints)
-- Firebase Admin: Firestore / Storage / Auth
+- Python 3.11
+- Flask (Blueprints)
+- Firebase Admin (Firestore, Storage, Auth)
 - LiveAvatar API
 - MediaPipe + FER
 - Ollama (módulo de chatbot)
 
 ---
 
-## Manual de usuario (Backend)
-El procedimiento detallado para instalar y ejecutar el backend está en el **Manual de usuario**, sección **Backend (1.1.\*)**.
+## Manual de usuario
+El manual de usuario del backend se encuentra en el archivo:
 
-Recomendación de organización dentro del repo:
-- `docs/manual_backend.md` (convertido a Markdown), o
-- `docs/Manual_de_usuario_Backend.docx` (si prefieres mantenerlo en Word)
+docs/Manual_de_usuario_Backend.docx
 
 ---
 
-## Puesta en marcha rápida
-> Para instrucciones completas, usa el manual. Esto es un resumen.
+## Instalación y ejecución
 
-### 1) Requisitos
+### Requisitos
 - Python 3.11
 - pip
 - Git
-- (Opcional) Conda
 
-### 2) Instalar dependencias
-- Crear/activar entorno virtual
-- `pip install -r requirements.txt`
+### Clonar el repositorio
+git clone <URL_DEL_REPOSITORIO>
+cd <CARPETA_DEL_REPOSITORIO>
 
-### 3) Variables de entorno
-Configurar variables en `.env` (o exportarlas en el sistema). Incluye:
-- Credenciales/ruta de Firebase
-- Claves de LiveAvatar
-- Configuración de ejecución (debug, URL de base de datos)
+### Crear y activar entorno virtual (venv)
+Crear:
+python -m venv .venv
 
-### 4) Ejecutar
-- `python app.py`
+Activar en Windows (PowerShell):
+.\.venv\Scripts\Activate.ps1
+
+Activar en Linux/macOS:
+source .venv/bin/activate
+
+### Instalar dependencias
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+
+### Configurar variables de entorno
+Crear un archivo `.env` en la raíz del repositorio con, como mínimo:
+
+LIVEAVATAR_API_KEY=...
+OPENAI_API_KEY=...
+FLASK_DEBUG=1
+DATABASE_URL=...
+FIREBASE_CREDENTIALS_PATH=firebase-credentials.json
+
+Colocar el archivo de credenciales de Firebase en la raíz del repositorio con el nombre:
+
+firebase-credentials.json
+
+### Ejecutar el servidor
+python app.py
+
+El backend queda disponible en:
+http://127.0.0.1:5000
 
 ---
 
 ## Endpoints de referencia
-- Salud/estado del servicio (según implementación)
-- `/avatar/*`, `/recognition/*`, `/chatbot/*`, `/auth/*`, `/profile/*`
+- /avatar/*
+- /recognition/*
+- /chatbot/*
+- /auth/*
+- /profile/*
 
 ---
 
 ## Testing
-No se incluyó suite de pruebas automatizadas en esta versión del proyecto.
+Esta versión del proyecto no incluye pruebas automatizadas.
