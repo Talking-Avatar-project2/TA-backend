@@ -47,6 +47,7 @@ docs/Manual_de_usuario_Backend.docx
 - Git
 
 ### Clonar el repositorio
+seleccionar la rama feature/core-v8
 git clone <URL_DEL_REPOSITORIO>
 cd <CARPETA_DEL_REPOSITORIO>
 
